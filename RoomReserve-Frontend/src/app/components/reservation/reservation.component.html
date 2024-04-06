@@ -1,0 +1,17 @@
+<div class="reservation-list">
+    <div *ngFor="let reservation of reservations" class="reservation-item">
+        <img src="{{reservation.room.imageUrl}}" alt="Soba" class="room-image">
+        <div class="room-details">
+            <h2>Name: {{reservation.room.name}}</h2>
+            <p>Location: {{reservation.room.location}}</p>
+            <p>Capacity: {{reservation.room.capacity}}</p>
+            <p>Square Footage: {{reservation.room.squareFootage}}<sup>2</sup></p>
+            <p>Room Price: {{reservation.room.price}}</p>
+            <p>Date: {{reservation.date}}</p>
+        </div>
+        <div>
+            <button (click)="deleteReservation(reservation.id)" class="delete-button">Delete</button>
+            <button (click)="downloadReservation(reservation.id)" class="download-button">Download</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div *ngIf="sideMenu" class="col-md-2" style="background-color: #817F7F;">
+            <!-- Sadržaj sidebar-a -->
+            <app-side-menu></app-side-menu>
+        </div>
+        <!-- Glavni sadržaj -->
+        <div [ngClass]="sideMenu ? 'col-md-10' : 'col-md-12'" style="margin-top: 10px;">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
